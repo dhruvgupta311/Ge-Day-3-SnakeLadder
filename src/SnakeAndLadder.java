@@ -19,11 +19,12 @@ public class SnakeAndLadder {
                     System.out.println("No Play: Player stays at position " + playerPos);
                     break;
                 case 1:
-                    playerPos += dieRoll;
-                    if (playerPos > winningPos) {
-                        playerPos -= dieRoll;
+                    if (playerPos + dieRoll <= winningPos) {
+                        playerPos += dieRoll;
+                        System.out.println("Ladder: Player moves ahead to position " + playerPos);
+                    } else {
+                        System.out.println("Ladder: Player stays at position " + playerPos);
                     }
-                    System.out.println("Ladder: Player moves ahead to position " + playerPos);
                     break;
                 case 2:
                     playerPos -= dieRoll;
@@ -35,6 +36,6 @@ public class SnakeAndLadder {
             }
         }
 
-        System.out.println("Congratulations! Player reaches the winning position: " + playerPos);
+        System.out.println("Congratulations! Player reaches the exact winning position: " + playerPos);
     }
 }
