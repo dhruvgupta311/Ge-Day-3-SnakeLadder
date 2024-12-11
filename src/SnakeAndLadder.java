@@ -4,6 +4,7 @@ public class SnakeAndLadder {
     public static void main(String[] args) {
         int playerPos = 0;
         int winningPos = 100;
+        int dieCount = 0;
         Random rand = new Random();
 
         System.out.println("Player starts at position: " + playerPos);
@@ -12,7 +13,8 @@ public class SnakeAndLadder {
             int dieRoll = rand.nextInt(6) + 1;
             int option = rand.nextInt(3);
 
-            System.out.println("Player rolls the die and gets: " + dieRoll);
+            dieCount++;
+            System.out.println("Roll #" + dieCount + ": Player rolls the die and gets: " + dieRoll);
 
             switch (option) {
                 case 0:
@@ -37,5 +39,6 @@ public class SnakeAndLadder {
         }
 
         System.out.println("Congratulations! Player reaches the exact winning position: " + playerPos);
+        System.out.println("Total number of die rolls to win the game: " + dieCount);
     }
 }
